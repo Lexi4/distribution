@@ -180,6 +180,7 @@ jobs:
     uses: ./.github/workflows/build-device.yml
     permissions:
       actions: write          # <-- add this line
+      contents: read          # ← add this
     secrets: inherit
     with:
       PROJECT: ${{ matrix.project }}
