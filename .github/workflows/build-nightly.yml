@@ -178,6 +178,8 @@ jobs:
       matrix:
         include: ${{ fromJSON(needs.set-envs.outputs.matrix) }}
     uses: ./.github/workflows/build-device.yml
+    permissions:
+      actions: write          # <-- add this line
     secrets: inherit
     with:
       PROJECT: ${{ matrix.project }}
