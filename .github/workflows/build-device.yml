@@ -40,6 +40,8 @@ jobs:
       PROJECT: ${{ inputs.PROJECT }}
       DEVICE: ${{ inputs.DEVICE }}
       OWNER_LC: ${{ inputs.OWNER_LC }}
+    permissions:
+      actions: write          # ← required by the nested job
 
   build-aarch64:
     needs: build-aarch64-toolchain
